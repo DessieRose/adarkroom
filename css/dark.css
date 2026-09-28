@@ -1,5 +1,5 @@
 body {
-	background-color: #272823;
+	background-color: #20211c;
 	color: #EEE;
 }
 
@@ -8,22 +8,22 @@ div.headerButton {
 }
 
 div#notifyGradient {
-	background-color: #272823;
-	background: -webkit-linear-gradient( rgba(39, 40, 35, 0) 0%, rgba(39, 40, 35, 1) 100% );
-	background: linear-gradient( rgba(39, 40, 35, 0) 0%, rgba(39, 40, 35, 1) 100% );
+	background-color: #20211c;
+	background: -webkit-linear-gradient( rgba(32, 33, 28, 0) 0%, rgba(32, 33, 28, 1) 100% );
+	background: linear-gradient( rgba(32, 33, 28, 0) 0%, rgba(32, 33, 28, 1) 100% );
 	filter: alpha( Opacity=0, FinishOpacity=100, Style=1, StartX=0, StartY=0, FinishX=0, FinishY=500 );
 }
 
 div#saveNotify {
-	background: #272823;
+	background: #20211c;
 }
 
 .eventPanel:before {
-	background-color: #272823;
+	background-color: #20211c;
 }
 
 .eventTitle:after {
-	background-color: #272823;
+	background-color: #20211c;
 }
 
 div.tooltip {
@@ -33,11 +33,11 @@ div.tooltip {
 }
 
 div#population {
-	background-color: #272823;
+	background-color: #20211c;
 }
 
 div#village:before {
-	background: #272823;
+	background: #20211c;
 }
 
 div#village {
@@ -45,7 +45,7 @@ div#village {
 }
 
 div#stores:before {
-	background: #272823;
+	background: #20211c;
 }
 
 div#stores {
@@ -53,7 +53,7 @@ div#stores {
 }
 
 div#blueprints:before {
-	background: #272823;
+	background: #20211c;
 }
 
 div#blueprints {
@@ -61,7 +61,7 @@ div#blueprints {
 }
 
 div#weapons:before {
-	background: #272823;
+	background: #20211c;
 }
 
 div#weapons {
@@ -69,11 +69,11 @@ div#weapons {
 }
 
 div#bagspace {
-	background-color: #272823;
+	background-color: #20211c;
 }
 
 div#outfitting:before {
-	background: #272823;
+	background: #20211c;
 }
 
 div#perks {
@@ -81,7 +81,7 @@ div#perks {
 }
 
 div#perks:before {
-	background-color: #272823;
+	background-color: #20211c;
 }
 
 div#outfitting {
@@ -97,15 +97,15 @@ div.supplyItem {
 }
 
 #backpackTitle {
-	background-color: #272823;
+	background-color: #20211c;
 }
 
 #backpackSpace {
-	background-color: #272823;
+	background-color: #20211c;
 }
 
 #healthCounter {
-	background-color: #272823;
+	background-color: #20211c;
 }
 
 #map {
@@ -117,7 +117,7 @@ div.supplyItem {
 }
 
 #dropMenu {
-	background: none repeat scroll 0 0 #272823;
+	background: none repeat scroll 0 0 #20211c;
 	box-shadow: -1px 3px 2px #111;
 }
 
@@ -126,13 +126,13 @@ div.button {
 }
 
 div.button.disabled, div.button.disabled:hover {
-	border-color: #444;
-	color: #444;
+	border-color: #555555;
+	color: #555555;
 }
 
 
 .upBtn:after, .upManyBtn:after {
-	border-color: transparent transparent #272823;
+	border-color: transparent transparent #20211c;
 }
 
 .upBtn:before, .upManyBtn:before {
@@ -144,7 +144,7 @@ div.button.disabled, div.button.disabled:hover {
 }
 
 .dnBtn:after, .dnManyBtn:after {
-	border-color: #272823 transparent transparent;
+	border-color: #20211c transparent transparent;
 }
 
 .dnBtn:before, .dnManyBtn:before {
@@ -157,7 +157,7 @@ div.button.disabled, div.button.disabled:hover {
 
 body.noMask .eventTitle {
 	background-color: #EEE;
-	color: #272823;
+	color: #20211c;
 }
 
 body.noMask .eventTitle:after {
@@ -169,12 +169,12 @@ body.noMask .eventPanel {
 }
 
 body.noMask #description {
-	color: #272823;
+	color: #20211c;
 }
 
 body.noMask #buttons > .button {
-	border: 1px solid #272823;
-	color: #272823;
+	border: 1px solid #20211c;
+	color: #20211c;
 }
 
 #stars > div, #starsBack > div {
@@ -182,7 +182,7 @@ body.noMask #buttons > .button {
 }
 
 .endGame, .outro {
-	color:#272823;
+	color:#20211c;
 }
 
 #wait-btn {
@@ -191,7 +191,7 @@ body.noMask #buttons > .button {
 }
 
 #theEnd {
-	color: #272823;
+	color: #20211c;
 }
 
 .logo-icon > path {
