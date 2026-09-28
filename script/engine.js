@@ -614,7 +614,8 @@
       slider.animate({left: -(panelIndex * 700) + 'px'}, 300 * diff);
 
       if($SM.get('stores.wood') !== undefined) {
-        // FIXME Why does this work if there's an animation queue...?
+        // Animates 'right' here; moveStoresView() animates 'top' on the same element
+        // concurrently, since it uses {queue: false} to skip the default fx queue.
         stores.animate({right: -(panelIndex * 700) + 'px'}, 300 * diff);
       }
 
