@@ -40,6 +40,22 @@ var Room = {
 			},
 			audio: AudioLibrary.BUILD_CART
 		},
+		'farm': {
+			name: _('farm'),
+			button: null,
+			maximum: 5,
+			availableMsg: _('builder says the soil out back could grow something, given a plot and some seeds'),
+			buildMsg: _('a small plot is tilled and planted at the edge of the village'),
+			maxMsg: _("no more room to plant"),
+			type: 'building',
+			cost: function () {
+				var n = $SM.get('game.buildings["farm"]', true);
+				return {
+					'wood': 20 + (n * 20)
+				};
+			},
+			audio: AudioLibrary.BUILD
+		},
 		'hut': {
 			name: _('hut'),
 			button: null,
