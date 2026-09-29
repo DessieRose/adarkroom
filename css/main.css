@@ -668,3 +668,7 @@ body.noMask #description {
 #dropMenu > div:hover {
 	text-decoration: underline;
 }
+
+.warning {
+	text-align: center;
+}
