@@ -142,43 +142,43 @@
         });
       }
 
-      $('<span>')
+      $('<button>')
         .addClass('volume menuBtn')
         .text(_('sound on.'))
         .click(() => Engine.toggleVolume())
         .appendTo(menu);
 
-      $('<span>')
+      $('<button>')
         .addClass('appStore menuBtn')
         .text(_('get the app.'))
         .click(Engine.getApp)
         .appendTo(menu);
 
-      $('<span>')
+      $('<button>')
         .addClass('lightsOff menuBtn')
         .text(_('lights off.'))
         .click(Engine.turnLightsOff)
         .appendTo(menu);
 
-      $('<span>')
+      $('<button>')
         .addClass('hyper menuBtn')
         .text(_('hyper.'))
         .click(Engine.confirmHyperMode)
         .appendTo(menu);
 
-      $('<span>')
+      $('<button>')
         .addClass('menuBtn')
         .text(_('restart.'))
         .click(Engine.confirmDelete)
         .appendTo(menu);
 
-      $('<span>')
+      $('<button>')
         .addClass('menuBtn')
         .text(_('share.'))
         .click(Engine.share)
         .appendTo(menu);
 
-      $('<span>')
+      $('<button>')
         .addClass('menuBtn')
         .text(_('save.'))
         .click(Engine.exportImport)
@@ -187,14 +187,14 @@
       if(this.options.dropbox && Engine.Dropbox) {
         this.dropbox = Engine.Dropbox.init();
 
-        $('<span>')
+        $('<button>')
           .addClass('menuBtn')
           .text(_('dropbox.'))
           .click(Engine.Dropbox.startDropbox)
           .appendTo(menu);
       }
 
-      $('<span>')
+      $('<button>')
         .addClass('menuBtn')
         .text(_('github.'))
         .click(function() { window.open('https://github.com/doublespeakgames/adarkroom'); })
