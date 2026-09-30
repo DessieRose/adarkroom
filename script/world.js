@@ -922,7 +922,7 @@ var World = {
       Engine.event('game event', 'death');
       Engine.keyLock = true;
       // Dead! Discard any world changes and go home
-      Notifications.notify(World, _('the world fades'));
+      Notifications.notify(World, _('the world fades and the supplies is gone'));
       World.state = null;
       Path.outfit = {};
       $SM.remove('outfit');
