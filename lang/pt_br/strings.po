@@ -2896,7 +2896,7 @@ msgstr ""
 "assim que a porta abre-se um pouco, centenas de tentáculos entram em erupção. "
 
 #: script/events/setpieces.js:2337
-msgid "bird must have liked shiney things."
+msgid "bird must have liked shiny things."
 msgstr "passáro deve gostar de coisas brilhantes."
 
 #: script/events/setpieces.js:2338
