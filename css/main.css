@@ -91,6 +91,7 @@ div#header {
   flex-direction: row-reverse;
   gap: 20px;
   border: 1px solid black;
+  padding: 10px;
 }
 
 .menu button {
