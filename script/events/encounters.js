@@ -434,40 +434,41 @@ Events.Encounters = [
 			}
 		}
 	},
-	/* Seed encounters: one per crop in CROPS.List (script/crops.js) */
-	Object.keys(CROPS.List).forEach(function (crop) {
-	var c = CROPS.List[crop];
-	Events.Encounters.push({
-		title: c.seedName,
-		isAvailable: function () {
-		return (
-			World.getDistance() >= c.drop.minDistance &&
-			World.getDistance() <= c.drop.maxDistance &&
-			World.getTerrain() == World.TILE[c.drop.terrain] &&
-			!$SM.get('game.seeds["' + crop + '"]') && // not unlocked yet
-			!Path.outfit[c.seed] && // not already in the bag this trip
-			Math.random() < c.drop.chance // rarity from crops.js
-		);
-		},
-		scenes: {
-		start: {
-			text: c.text,
-			notification: c.notification,
-			loot: {
-			[c.seed]: {
-				min: 1,
-				max: 1,
-				chance: 1,
-			},
-			},
-			buttons: {
-			leave: {
-				text: _("leave"),
-				nextScene: "end",
-			},
-			},
-		},
-		},
-	});
-	})
 ];
+
+/* Seed encounters: one per crop in CROPS.List (script/crops.js) */
+Object.keys(CROPS.List).forEach(function (crop) {
+var c = CROPS.List[crop];
+Events.Encounters.push({
+	title: c.seedName,
+	isAvailable: function () {
+	return (
+		World.getDistance() >= c.drop.minDistance &&
+		World.getDistance() <= c.drop.maxDistance &&
+		World.getTerrain() == World.TILE[c.drop.terrain] &&
+		!$SM.get('game.seeds["' + crop + '"]') && // not unlocked yet
+		!Path.outfit[c.seed] && // not already in the bag this trip
+		Math.random() < c.drop.chance // rarity from crops.js
+	);
+	},
+	scenes: {
+	start: {
+		text: c.text,
+		notification: c.notification,
+		loot: {
+		[c.seed]: {
+			min: 1,
+			max: 1,
+			chance: 1,
+		},
+		},
+		buttons: {
+		leave: {
+			text: _("leave"),
+			nextScene: "end",
+		},
+		},
+	},
+	},
+});
+})
