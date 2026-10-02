@@ -4,12 +4,14 @@
  *
  * The key of each entry is the veggie's name in stores, e.g. stores["carrot"].
  */
-const Crops = {
+const CROPS = {
   List: {
     carrot: {
       name: _("carrot"), // veggie, shown in stores and on the path
       seed: "carrot seed", // key in stores, e.g. stores["carrot seed"]
       seedName: _("carrot seed"),
+      text: [_("a few scraggly carrots grow wild between the roots.")],
+      notification: _("something green, in all the grey."),
       growTime: 30, // seconds from planting to ready
       yield: 3, // veggies per harvest
       heal: 4, // hp restored when eaten (cured meat is 8)
@@ -28,6 +30,13 @@ const Crops = {
       name: _("cabbage"),
       seed: "cabbage seed",
       seedName: _("cabbage seed"),
+      text: [
+        _("a clearing, once a garden. the fence has rotted to stumps."),
+        _(
+          "a few seed heads still cling to a bolted cabbage, gone tall and bitter.",
+        ),
+      ],
+      notification: _("someone tended this ground, once."),
       growTime: 45,
       yield: 2,
       heal: 6,
@@ -46,6 +55,13 @@ const Crops = {
       name: _("potato"),
       seed: "potato seed",
       seedName: _("potato seed"),
+      text: [
+        _("a collapsed root cellar, half buried in the grass."),
+        _(
+          "in the dark, a sack of withered potatoes. pale shoots reach for the light.",
+        ),
+      ],
+      notification: _("the ground gives way to a hollow."),
       growTime: 70,
       yield: 2,
       heal: 8,
@@ -64,6 +80,13 @@ const Crops = {
       name: _("dragonfruit"),
       seed: "dragonfruit seed",
       seedName: _("dragonfruit seed"),
+      text: [
+        _("a cactus, impossibly alive in the dust."),
+        _(
+          "a single red fruit hangs from it, split open. black seeds glisten inside.",
+        ),
+      ],
+      notification: _("a flash of red in the dust."),
       growTime: 95,
       yield: 2,
       heal: 10,
@@ -82,6 +105,14 @@ const Crops = {
       name: _("hibiscus"),
       seed: "hibiscus seed",
       seedName: _("hibiscus seed"),
+      text: [
+        _(
+          "deep in the trees, a ring of red flowers. no other plant grows near.",
+        ),
+        _("the seed pods rattle in the wind, dry and ready."),
+      ],
+      notification: _("color, where there should be none."),
+
       growTime: 120,
       yield: 1,
       heal: 12,
