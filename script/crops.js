@@ -17,7 +17,7 @@ const Crops = {
       drop: {
         terrain: "FOREST", // key of World.TILE: 'FOREST', 'FIELD' or 'BARRENS'
         minDistance: 0, // distance from the village, as in World.getDistance()
-        maxDistance: 10,
+        maxDistance: 8,
         chance: 0.2, // chance the seed is in the loot, 0 to 1
       },
       plantMsg: _("seeds pressed into grey soil."),
@@ -34,8 +34,8 @@ const Crops = {
       weight: 1,
       drop: {
         terrain: "FOREST",
-        minDistance: 10,
-        maxDistance: 20,
+        minDistance: 8,
+        maxDistance: 18,
         chance: 0.2,
       },
       plantMsg: _("pale seeds scattered over the furrows."),
@@ -52,8 +52,8 @@ const Crops = {
       weight: 1,
       drop: {
         terrain: "FIELD",
-        minDistance: 20,
-        maxDistance: 35,
+        minDistance: 18,
+        maxDistance: 28,
         chance: 0.15,
       },
       plantMsg: _("seed potatoes buried in the dark earth."),
@@ -70,8 +70,8 @@ const Crops = {
       weight: 1,
       drop: {
         terrain: "BARRENS",
-        minDistance: 35,
-        maxDistance: 50,
+        minDistance: 22,
+        maxDistance: 32,
         chance: 0.1,
       },
       plantMsg: _("strange black seeds pressed into the ash."),
@@ -88,8 +88,8 @@ const Crops = {
       weight: 1,
       drop: {
         terrain: "FOREST",
-        minDistance: 50,
-        maxDistance: 80,
+        minDistance: 28,
+        maxDistance: 40,
         chance: 0.05,
       },
       plantMsg: _("a single bright seed, laid in the soil."),
