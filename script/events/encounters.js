@@ -124,7 +124,7 @@ Events.Encounters = [
 				combat: true,
 				enemy: 'two-headed creature',
 				enemyName: _('two-headed creature'),
-				deathMessage: _('the two creatures are dead'),
+				deathMessage: _('the two-headed creature is dead'),
 				chara: 'K',
 				damage: 2,
 				hit: 0.5,

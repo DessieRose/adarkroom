@@ -1920,7 +1920,7 @@ msgstr ""
 "s'immiscent dans l'interstice."
 
 #: ../../script/events/setpieces.js:2337
-msgid "bird must have liked shiney things."
+msgid "bird must have liked shiny things."
 msgstr "l'oiseau devait aimer les trucs qui brillent."
 
 #: ../../script/events/setpieces.js:2338

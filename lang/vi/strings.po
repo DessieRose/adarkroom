@@ -2929,7 +2929,7 @@ msgid "as soon as the door is open a little bit, hundreds of tentacles erupt."
 msgstr "ngay sau khi cánh cửa được mở ra một chút, hàng trăm xúc tu mọc lên."
 
 #: script/events/setpieces.js:2337
-msgid "bird must have liked shiney things."
+msgid "bird must have liked shiny things."
 msgstr "loài chim thích những thứ sáng bóng."
 
 #: script/events/setpieces.js:2338

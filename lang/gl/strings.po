@@ -3020,7 +3020,7 @@ msgid "as soon as the door is open a little bit, hundreds of tentacles erupt."
 msgstr "en canto a porta se abre un pouco, centos de tentáculos emerxen."
 
 #: script/events/setpieces.js:2337
-msgid "bird must have liked shiney things."
+msgid "bird must have liked shiny things."
 msgstr "ao páxaro debíanlle de gustar as cousas brillantes."
 
 #: script/events/setpieces.js:2338
