@@ -5,6 +5,8 @@
  * The key of each entry is the veggie's name in stores, e.g. stores["carrot"].
  */
 const CROPS = {
+  SEED_WEIGHT: 0.1, // bag space of any seed on the path
+
   List: {
     carrot: {
       name: _("carrot"), // veggie, shown in stores and on the path
