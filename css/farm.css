@@ -1,0 +1,89 @@
+/* everything in here is absolutely positioned, so the panel would otherwise
+   collapse to nothing and sit oddly among the other location panels */
+div#farmPanel {
+	min-height: 700px;
+}
+
+div#fieldBtns {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 140px;
+}
+
+/* the crop buttons stack underneath the field button */
+div#cropBtns {
+	position: absolute;
+	top: 75px;
+	left: 0px;
+	width: 280px;
+}
+
+div#cropBtns:before {
+	display: block;
+	content: attr(data-legend);
+	position: relative;
+	top: -5px;
+}
+
+div#fieldStatus {
+	cursor: default;
+}
+
+div.cropRow {
+	position: relative;
+	margin-bottom: 5px;
+}
+
+div.cropRow div.button {
+	float: left;
+	margin-bottom: 0px;
+}
+
+div.cropRow div.button div.tooltip {
+	width: 130px;
+}
+
+div.cropFarmers {
+	float: left;
+	width: 100px;
+	margin-left: 15px;
+	padding-top: 3px;
+	cursor: default;
+}
+
+div.cropFarmers > div.row_val {
+	position: relative;
+	padding-right: 20px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+div#farmStores {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 222px;
+}
+
+div.farmStoreBox {
+	position: relative;
+	border: 1px solid black;
+	cursor: default;
+	padding: 10px 10px;
+	width: 200px;
+	margin-top: 15px;
+}
+
+div.farmStoreBox:before {
+	position: absolute;
+	background: white;
+	content: attr(data-legend);
+	left: 8px;
+	top: -13px;
+	font-weight: bold;
+}
