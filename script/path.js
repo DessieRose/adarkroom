@@ -63,10 +63,11 @@ var Path = {
 	},
 	
 	getWeight: function(thing) {
-		var w = Path.Weight[thing];
-		if(typeof w != 'number') w = 1;
-		
-		return w;
+		if(typeof Path.Weight[thing] == 'number') return Path.Weight[thing];
+		// crop weights live in crops.js
+		if(CROPS.List[thing]) return CROPS.List[thing].weight;
+		if(Object.values(CROPS.List).some(c => c.seed == thing)) return CROPS.SEED_WEIGHT;
+		return 1;
 	},
 	
 	getCapacity: function() {
