@@ -35,13 +35,7 @@ const Farm = {
     }
   },
 
-  // sets the permanent unlock for a crop's seed
-  unlockCrop: key => {
-    if (Farm.crop(key) && !$SM.get(`game.seeds["${key}"]`)) {
-      $SM.set(`game.seeds["${key}"]`, true);
-    }
-  },
-
+  // the unlock itself is set by World.redeemSeeds() (script/world.js)
   isUnlocked: key => $SM.get(`game.seeds["${key}"]`) === true,
 
   // the builder won't offer a farm until there is something to put in it
