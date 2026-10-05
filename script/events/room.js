@@ -50,6 +50,79 @@ Events.Room = [
 		},
 		audio: AudioLibrary.EVENT_NOMAD
 	},
+	
+	{ /* The Seed Trader  --  Merchant */
+		title: _('The Seed Trader'),
+		isAvailable: function() {
+			return Engine.activeModule == Room && $SM.get('game.buildings["farm"]', true) > 0;
+		},
+		scenes: {
+			'start': {
+				text: [
+					_('a stooped figure arrives, pockets rattling with small paper packets.'),
+					_('she eyes the fields, then the stores, and smiles.')
+				],
+				notification: _('a seed trader arrives, looking to trade'),
+				blink: true,
+				buttons: {
+					'sellCarrots': {
+						text: _('sell carrots'),
+						cost: { 'carrot': 5 },
+						reward: { 'fur': 15 }
+					},
+					'sellCabbage': {
+						text: _('sell cabbage'),
+						cost: { 'cabbage': 2 },
+						reward: { 'fur': 10 }
+					},
+					'sellPotatoes': {
+						text: _('sell potatoes'),
+						cost: { 'potato': 3 },
+						reward: { 'fur': 12 }
+					},
+					'buyCarrotSeed': {
+						available: function() {
+							return !$SM.get('game.seeds["carrot"]');
+						},
+						text: _('buy carrot seed'),
+						cost: { 'fur': 50 },
+						onChoose: function() {
+							$SM.set('game.seeds["carrot"]', true);
+						},
+						notification: _('the packet is light, but something rattles inside.')
+					},
+					'buyCabbageSeed': {
+						available: function() {
+							return !$SM.get('game.seeds["cabbage"]');
+						},
+						text: _('buy cabbage seed'),
+						cost: { 'fur': 100 },
+						onChoose: function() {
+							$SM.set('game.seeds["cabbage"]', true);
+						},
+						notification: _('pale seeds, wrapped in a scrap of cloth.')
+					},
+					'buyPotatoSeed': {
+						available: function() {
+							return !$SM.get('game.seeds["potato"]');
+						},
+						text: _('buy potato seed'),
+						cost: { 'fur': 150 },
+						onChoose: function() {
+							$SM.set('game.seeds["potato"]', true);
+						},
+						notification: _('a wrinkled seed potato, eyes already sprouting.')
+					},
+					'goodbye': {
+						text: _('say goodbye'),
+						nextScene: 'end'
+					}
+				}
+			}
+		},
+		audio: AudioLibrary.EVENT_NOMAD
+	},
+
 	{ /* Noises Outside  --  gain wood/fur */
 		title: _('Noises'),
 		isAvailable: function() {
