@@ -227,6 +227,10 @@
       if($SM.get('stores.compass', true) > 0) {
         Path.init();
       }
+      // the fields unlock with the first farm, which can happen mid-session, so
+      // keep checking until the tab is up
+      $.Dispatch('stateUpdate').subscribe(Farm.checkUnlock);
+      Farm.checkUnlock();
       if ($SM.get('features.location.fabricator')) {
         Fabricator.init();
       }
@@ -624,6 +628,15 @@
         $('div#weapons').animate({opacity: 1}, 300);
       }
 
+      // The Farm tab has its own crops/seeds boxes and doesn't show the
+      // general wood/fur/meat stores panel at all. queue: false so this runs
+      // alongside the 'right' animation above, rather than waiting for it.
+      if(module == Farm) {
+        stores.animate({opacity: 0}, {queue: false, duration: 300});
+      } else if(Engine.activeModule == Farm) {
+        stores.animate({opacity: 1}, {queue: false, duration: 300});
+      }
+
       Engine.activeModule = module;
       module.onArrival(diff);
       Notifications.printQueue(module);
@@ -713,12 +726,15 @@
               if (Engine.activeModule == Ship && Fabricator.tab) {
                 Engine.travelTo(Fabricator);
               }
-              else if ((Engine.activeModule == Ship || Engine.activeModule == Fabricator) && Path.tab) {
+              else if ((Engine.activeModule == Ship || Engine.activeModule == Fabricator) && Farm.tab) {
+                Engine.travelTo(Farm);
+              }
+              else if ((Engine.activeModule == Ship || Engine.activeModule == Fabricator || Engine.activeModule == Farm) && Path.tab) {
                 Engine.travelTo(Path);
               }
-              else if (Engine.activeModule == Path && Outside.tab) {
+              else if ((Engine.activeModule == Path || Engine.activeModule == Farm) && Outside.tab) {
                 Engine.travelTo(Outside);
-              } 
+              }
               else if (Engine.activeModule == Outside && Room.tab) {
                 Engine.travelTo(Room);
               }
@@ -734,10 +750,13 @@
               else if (Engine.activeModule == Outside && Path.tab){
                 Engine.travelTo(Path);
               }
-              else if(Engine.activeModule == Path && Fabricator.tab) {
+              else if ((Engine.activeModule == Outside || Engine.activeModule == Path) && Farm.tab){
+                Engine.travelTo(Farm);
+              }
+              else if((Engine.activeModule == Path || Engine.activeModule == Farm) && Fabricator.tab) {
                 Engine.travelTo(Fabricator);
               }
-              else if ((Engine.activeModule == Path || Engine.activeModule == Fabricator) && Ship.tab){
+              else if ((Engine.activeModule == Path || Engine.activeModule == Farm || Engine.activeModule == Fabricator) && Ship.tab){
                 Engine.travelTo(Ship);
               }
             }
