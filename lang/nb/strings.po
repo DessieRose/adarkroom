@@ -2931,7 +2931,7 @@ msgid "as soon as the door is open a little bit, hundreds of tentacles erupt."
 msgstr "så snart døren er litt åpnet, flyr hundrevis av tentakler ut."
 
 #: script/events/setpieces.js:2337
-msgid "bird must have liked shiney things."
+msgid "bird must have liked shiny things."
 msgstr "fuglen må ha likt skinnende ting."
 
 #: script/events/setpieces.js:2338

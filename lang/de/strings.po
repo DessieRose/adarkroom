@@ -1897,7 +1897,7 @@ msgstr ""
 "hindurch."
 
 #: script/events/setpieces.js:2337
-msgid "bird must have liked shiney things."
+msgid "bird must have liked shiny things."
 msgstr "vogel muss glitzernde dinge gesammelt haben."
 
 #: script/events/setpieces.js:2338

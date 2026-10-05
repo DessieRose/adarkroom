@@ -2970,7 +2970,7 @@ msgstr ""
 "ella."
 
 #: script/events/setpieces.js:2337
-msgid "bird must have liked shiney things."
+msgid "bird must have liked shiny things."
 msgstr "al pájaro deben haberle gustado las cosas brillantes."
 
 #: script/events/setpieces.js:2338
