@@ -63,6 +63,14 @@ div#stores {
   border: 1px solid #eee;
 }
 
+div.farmStoreBox:before {
+	background: #20211c;
+}
+
+div.farmStoreBox {
+	border: 1px solid #EEE;
+}
+
 div#blueprints:before {
   background: #20211c;
 }
