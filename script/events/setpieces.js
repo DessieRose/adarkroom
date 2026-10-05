@@ -2338,7 +2338,7 @@ Events.Setpieces = {
 		
 			'end1': {
 				text: [
-					_('bird must have liked shiney things.'),
+					_('bird must have liked shiny things.'),
 					_('some good stuff woven into its nest.')
 				],
 				onLoad: function() {

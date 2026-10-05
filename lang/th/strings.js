@@ -238,7 +238,7 @@ _.setTranslation({"water tank": "ถังน้ำ", "all":"ทุกอย่�
    "bring your friends.": "พาเพื่อนไปด้วย", "the compass points south": "เข็มทิศชี้ไปทางทิศใต้",
    "the compass points north": "เข็มทิศชี้ไปทางทิศเหนือ", "The Sick Man": "คนป่วย", "yes": "ใช่", "martial artist": "นักสู้มือเปล่า",
    "the traps contain ": "ในกับดักมี : ", "the old tower seems mostly intact.": "หอคอยใหญ่ ดูภายนอกสมบูรณ์ดี", "scales": "เกล็ด",
-   "bird must have liked shiney things.": "พวกนกน่าจะชอบของสะท้อนแสง", "the path leads to an abandoned mine": "เส้นทางนี้นำไปสู่เหมืองร้าง",
+   "bird must have liked shiny things.": "พวกนกน่าจะชอบของสะท้อนแสง", "the path leads to an abandoned mine": "เส้นทางนี้นำไปสู่เหมืองร้าง",
    "the compass points northeast": "เข็มทิศชี้ไปทางทิศตะวันออกเฉียงเหนือ", "the camp is still, save for the crackling of the fires.": "ค่ายเงียบสงบดี มีเพียงเสียงของเปลวไฟและฟืนเป็นครั้งคราว", "he begs for medicine.": "เขามาขอยา", "save": "บันทึก",
    "this waterskin'll hold a bit of water, at least": "อย่างน้อยถุงน้ำก็ยังเก็บน้ำมากกว่าไม่มีอะไรเลย", "turn him away": "ไล่เขาไป",
    "the people here were broken a long time ago.": "ผู้คนที่นี่ไม่สามารถทำอะไรได้เป็นชิ้นเป็นอันมานานมากแล้ว", "a grizzled soldier attacks, waving a bayonet.": "ทหารท่าทางดุดันพุ่งเข้ามาโจมตี โบกดาบปลายปืนไปมา", "shivering man": "คนตัวสั่น", "The Mysterious Wanderer": "ผู้เดินทางลึกลับ", "A Huge Lizard": "กิ้งก่ายักษ์",

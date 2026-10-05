@@ -2942,7 +2942,7 @@ msgid "as soon as the door is open a little bit, hundreds of tentacles erupt."
 msgstr "tak długo jak drzwi są trochę otwarte, setki macek wybuchają."
 
 #: script/events/setpieces.js:2337
-msgid "bird must have liked shiney things."
+msgid "bird must have liked shiny things."
 msgstr "ptak musiał lubić świecidełka."
 
 #: script/events/setpieces.js:2338

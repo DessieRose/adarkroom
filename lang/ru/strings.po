@@ -1886,7 +1886,7 @@ msgid "as soon as the door is open a little bit, hundreds of tentacles erupt."
 msgstr "как только дверь открывается, выскакивают сотни щупальцев."
 
 #: ../../script/events/setpieces.js:2337
-msgid "bird must have liked shiney things."
+msgid "bird must have liked shiny things."
 msgstr "похоже птице нравятся блестящие вещи."
 
 #: ../../script/events/setpieces.js:2338

@@ -124,7 +124,7 @@ Events.Encounters = [
 				combat: true,
 				enemy: 'two-headed creature',
 				enemyName: _('two-headed creature'),
-				deathMessage: _('the two creatures are dead'),
+				deathMessage: _('the two-headed creature is dead'),
 				chara: 'K',
 				damage: 2,
 				hit: 0.5,
@@ -433,5 +433,42 @@ Events.Encounters = [
 				notification: _('a shot rings out, from somewhere in the long grass')
 			}
 		}
-	}
+	},
 ];
+
+/* Seed encounters: one per crop in CROPS.List (script/crops.js) */
+Object.keys(CROPS.List).forEach(function (crop) {
+var c = CROPS.List[crop];
+Events.Encounters.push({
+	title: c.seedName,
+	isAvailable: function () {
+	return (
+		World.getDistance() >= c.drop.minDistance &&
+		World.getDistance() <= c.drop.maxDistance &&
+		World.getTerrain() == World.TILE[c.drop.terrain] &&
+		!$SM.get('game.seeds["' + crop + '"]') && // not unlocked yet
+		!Path.outfit[c.seed] && // not already in the bag this trip
+		Math.random() < c.drop.chance // rarity from crops.js
+	);
+	},
+	scenes: {
+	start: {
+		text: c.text,
+		notification: c.notification,
+		loot: {
+		[c.seed]: {
+			min: 1,
+			max: 1,
+			chance: 1,
+		},
+		},
+		buttons: {
+		leave: {
+			text: _("leave"),
+			nextScene: "end",
+		},
+		},
+	},
+	},
+});
+})

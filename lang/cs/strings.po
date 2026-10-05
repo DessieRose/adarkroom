@@ -3055,7 +3055,7 @@ msgid "as soon as the door is open a little bit, hundreds of tentacles erupt."
 msgstr "jak se dveře, byť jen málo, otevřely, vyvalily se stovky chapadel."
 
 #: script/events/setpieces.js:2341
-msgid "bird must have liked shiney things."
+msgid "bird must have liked shiny things."
 msgstr "ten pták měl zřejmě v oblibě třpytivé věci."
 
 #: script/events/setpieces.js:2342
