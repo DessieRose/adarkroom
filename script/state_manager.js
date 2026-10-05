@@ -315,6 +315,20 @@ var StateManager = {
 				$SM.remove('cityCleared');
 			}
 			$SM.set('version', 1.3);
+			version = 1.3;
+		}
+		if(version == 1.3) {
+			// v1.4 added farming, so give old saves the farming defaults
+			if($SM.get('stores.vegetables') === undefined) {
+				$SM.set('stores.vegetables', 0);
+			}
+			if($SM.get('game.seeds') === undefined) {
+				$SM.set('game.seeds', {});
+			}
+			if($SM.get('game.buildings["farm"]') === undefined) {
+				$SM.set('game.buildings["farm"]', 0);
+			}
+			$SM.set('version', 1.4);
 		}
 	},
 
