@@ -3075,7 +3075,7 @@ msgid "as soon as the door is open a little bit, hundreds of tentacles erupt."
 msgstr "μόλις η πόρτα ανοίγει λίγο, εκατοντάδες πλοκάμια ξεσπούν."
 
 #: script/events/setpieces.js:2337
-msgid "bird must have liked shiney things."
+msgid "bird must have liked shiny things."
 msgstr "στο πουλί πρέπει να άρεσαν τα λαμπερά πράγματα."
 
 #: script/events/setpieces.js:2338

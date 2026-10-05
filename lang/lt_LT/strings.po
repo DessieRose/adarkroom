@@ -2914,7 +2914,7 @@ msgid "as soon as the door is open a little bit, hundreds of tentacles erupt."
 msgstr "durims šiek tiek atsidarius prasiveržia šimtai čiuptuvų."
 
 #: script/events/setpieces.js:2337
-msgid "bird must have liked shiney things."
+msgid "bird must have liked shiny things."
 msgstr "šiam paukščiui matyt patiko blizgučiai."
 
 #: script/events/setpieces.js:2338

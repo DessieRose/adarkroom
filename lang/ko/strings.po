@@ -2896,7 +2896,7 @@ msgid "as soon as the door is open a little bit, hundreds of tentacles erupt."
 msgstr "문이 조금 열리자마자 수백 개의 촉수가 솟아 오른다."
 
 #: script/events/setpieces.js:2337
-msgid "bird must have liked shiney things."
+msgid "bird must have liked shiny things."
 msgstr "새가 반짝이는 것을 좋아하는 게 분명하다."
 
 #: script/events/setpieces.js:2338

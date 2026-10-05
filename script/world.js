@@ -974,6 +974,7 @@ var World = {
       Engine.event('progress', 'fabricator');
     }
     World.redeemBlueprints();
+    World.redeemSeeds();
     World.state = null;
 
     if(Path.outfit['cured meat'] > 0) {
@@ -1007,6 +1008,23 @@ var World = {
 
     if (redeemed) {
       Notifications.notify(null, 'blueprints feed into the fabricator data port. possibilities grow.');
+    }
+  },
+
+  // found seeds unlock their crop in game.seeds instead of going into stores
+  redeemSeeds: () => {
+    let redeemed = false;
+    for (const crop in CROPS.List) {
+      const seed = CROPS.List[crop].seed;
+      if (Path.outfit[seed]) {
+        $SM.set(`game.seeds['${crop}']`, true);
+        delete Path.outfit[seed];
+        redeemed = true;
+      }
+    }
+
+    if (redeemed) {
+      Notifications.notify(null, _('seeds, wrapped in cloth. something to plant.'));
     }
   },
 

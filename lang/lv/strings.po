@@ -2926,7 +2926,7 @@ msgstr ""
 "durvīm paveroties tikai nedaudz, pa tām izgāžas simtiem kustīgu taustekļu."
 
 #: script/events/setpieces.js:2337
-msgid "bird must have liked shiney things."
+msgid "bird must have liked shiny things."
 msgstr "šim putnam, šķiet, patīk spīdīgi priekšmeti."
 
 #: script/events/setpieces.js:2338

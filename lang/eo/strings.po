@@ -2921,7 +2921,7 @@ msgstr ""
 "el ĝi."
 
 #: script/events/setpieces.js:2337
-msgid "bird must have liked shiney things."
+msgid "bird must have liked shiny things."
 msgstr "la birdo certe ŝatis briletaĵojn."
 
 #: script/events/setpieces.js:2338
