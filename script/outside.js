@@ -92,6 +92,11 @@ var Outside = {
 				'sulphur': -1,
 				'bullets': 1
 			}
+		},
+		'farmer': {
+			name: _('farmer'),
+			delay: 10,
+			stores: {}
 		}
 	},
 	TrapDrops: [
@@ -484,7 +489,8 @@ var Outside = {
 			'coal mine': ['coal miner'],
 			'sulphur mine': ['sulphur miner'],
 			'steelworks': ['steelworker'],
-			'armoury' : ['armourer']
+			'armoury' : ['armourer'],
+			'farm': ['farmer']
 		};
 		
 		var jobs = jobMap[name];
