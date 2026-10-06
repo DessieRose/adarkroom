@@ -141,6 +141,7 @@ var Events = {
 
 		var healBtns = $('<div>').appendTo(btns).attr('id','healButtons');
 		Events.createEatMeatButton().appendTo(healBtns);
+		Events.addCropButtons(healBtns);
 		if((Path.outfit['medicine'] || 0) !== 0) {
 			Events.createUseMedsButton().appendTo(healBtns);
 		}
@@ -280,24 +281,34 @@ var Events = {
 		f(btn, state);
 	},
 
-	createEatMeatButton: function(cooldown) {
+	// eats cured meat, or the given veggie from CROPS.List
+	createEatMeatButton: function(cooldown, crop) {
 		if (cooldown == null) {
 			cooldown = Events._EAT_COOLDOWN;
 		}
 
+		var item = crop || 'cured meat';
 		var btn = new Button.Button({
-			id: 'eat',
-			text: _('eat meat'),
+			id: crop ? 'eat_' + crop.replace(/ /g, '-') : 'eat',
+			text: crop ? _('eat {0}', CROPS.List[crop].name) : _('eat meat'),
 			cooldown: cooldown,
 			click: Events.eatMeat,
-			cost: { 'cured meat': 1 }
-		});
+			cost: { [item]: 1 }
+		}).data('crop', crop);
 
-		if(Path.outfit['cured meat'] === 0) {
+		if(Path.outfit[item] === 0) {
 			Button.setDisabled(btn, true);
 		}
 
 		return btn;
+	},
+
+	addCropButtons: function(healBtns, cooldown) {
+		for(var crop in CROPS.List) {
+			if((Path.outfit[crop] || 0) > 0) {
+				Events.createEatMeatButton(cooldown, crop).appendTo(healBtns);
+			}
+		}
 	},
 
 	createUseMedsButton: function(cooldown) {
@@ -438,7 +449,12 @@ var Events = {
 	},
 
 	eatMeat: function(btn) {
-		Events.doHeal('cured meat', World.meatHeal(), btn);
+		var crop = btn.data('crop');
+		if(crop) {
+			Events.doHeal(crop, CROPS.List[crop].heal, btn);
+		} else {
+			Events.doHeal('cured meat', World.meatHeal(), btn);
+		}
 		AudioEngine.playSound(AudioLibrary.EAT_MEAT);
 	},
 
@@ -819,6 +835,7 @@ var Events = {
 
 						var healBtns = $('<div>').appendTo(btns).attr('id','healButtons');
 						Events.createEatMeatButton(0).appendTo(healBtns);
+						Events.addCropButtons(healBtns, 0);
 						if((Path.outfit['medicine'] || 0) !== 0) {
 							Events.createUseMedsButton(0).appendTo(healBtns);
 						}
