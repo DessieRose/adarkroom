@@ -7,8 +7,6 @@ var Outside = {
 	_STORES_OFFSET: 0,
 	_GATHER_DELAY: 60,
 	_TRAPS_DELAY: 90,
-	_FARM_DELAY: 60,
-	_SELL_VEGETABLES_DELAY: 60,
 	_POP_DELAY: [0.5, 3],
 	_HUT_ROOM: 4,
 	
@@ -138,8 +136,6 @@ var Outside = {
 		if(Engine._debug) {
 			this._GATHER_DELAY = 0;
 			this._TRAPS_DELAY = 0;
-			this._FARM_DELAY = 0;
-			this._SELL_VEGETABLES_DELAY = 0;
 		}
 		
 		// Create the outside tab
@@ -176,7 +172,6 @@ var Outside = {
 		}).appendTo('div#outsidePanel');
 
 		Outside.updateTrapButton();
-		Outside.updateFarmButton();
 	},
 
 	getMaxPopulation: function() {
@@ -559,42 +554,6 @@ var Outside = {
 		}
 	},
 	
-	updateFarmButton: function() {
-		var pickBtn = $('div#pickVegetablesButton');
-		var sellBtn = $('div#sellVegetablesButton');
-		if($SM.get('game.buildings["farm"]', true) > 0) {
-			if(pickBtn.length === 0) {
-				new Button.Button({
-					id: 'pickVegetablesButton',
-					text: _("pick vegetables"),
-					click: Outside.pickVegetables,
-					cooldown: Outside._FARM_DELAY,
-					width: '80px'
-				}).appendTo('div#outsidePanel');
-			} else {
-				Button.setDisabled(pickBtn, false);
-			}
-			if(sellBtn.length === 0) {
-				new Button.Button({
-					id: 'sellVegetablesButton',
-					text: _("sell vegetables"),
-					click: Outside.sellVegetables,
-					cooldown: Outside._SELL_VEGETABLES_DELAY,
-					width: '80px'
-				}).appendTo('div#outsidePanel');
-			} else {
-				Button.setDisabled(sellBtn, false);
-			}
-		} else {
-			if(pickBtn.length > 0) {
-				Button.setDisabled(pickBtn, true);
-			}
-			if(sellBtn.length > 0) {
-				Button.setDisabled(sellBtn, true);
-			}
-		}
-	},
-
 	setTitle: function() {
 		var numHuts = $SM.get('game.buildings["hut"]', true);
 		var title;
@@ -625,7 +584,6 @@ var Outside = {
 			$SM.set('game.outside.seenForest', true);
 		}
 		Outside.updateTrapButton();
-		Outside.updateFarmButton();
 		Outside.updateVillage(true);
 
 		Engine.moveStoresView($('#village'), transition_diff);
@@ -695,24 +653,6 @@ var Outside = {
 		AudioEngine.playSound(AudioLibrary.CHECK_TRAPS);
 	},
 	
-	pickVegetables: function() {
-		var numFarms = $SM.get('game.buildings["farm"]', true);
-		Notifications.notify(Outside, _("the vegetable patch offers up its harvest"));
-		$SM.add('stores.vegetables', numFarms * 3);
-	},
-
-	sellVegetables: function() {
-		var numVeg = $SM.get('stores.vegetables', true);
-		if(numVeg <= 0) {
-			Notifications.notify(Outside, _("no vegetables to sell"));
-			Button.clearCooldown($('#sellVegetablesButton.button'));
-			return;
-		}
-		$SM.set('stores.vegetables', 0);
-		$SM.add('stores.wood', numVeg);
-		Notifications.notify(Outside, _("the vegetables fetch a fair price in wood"));
-	},
-
 	handleStateUpdates: function(e){
 		if(e.category == 'stores'){
 			Outside.updateVillage();

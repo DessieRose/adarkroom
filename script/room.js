@@ -1102,6 +1102,14 @@ var Room = {
 		return type == 'weapon' || type == 'upgrade' || type == 'tool';
 	},
 
+	hasAnySeed: function () {
+		var seeds = $SM.get('game.seeds');
+		for (var crop in seeds) {
+			if (seeds[crop]) return true;
+		}
+		return false;
+	},
+
 	craftUnlocked: function (thing) {
 		if (Room.buttons[thing]) {
 			return true;
@@ -1114,6 +1122,8 @@ var Room = {
 				if ($SM.get('game.buildings["' + b + '"]', true) < craftable.requires[b]) return false;
 			}
 		}
+		// farms stay hidden until the player has found at least one seed
+		if (thing == 'farm' && !Room.hasAnySeed()) return false;
 		var cost = craftable.cost();
 
 		//show button if one has already been built
