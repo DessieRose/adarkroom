@@ -67,18 +67,18 @@ Events.Room = [
 				buttons: {
 					'sellCarrots': {
 						text: _('sell carrots'),
-						cost: { 'carrot': 5 },
-						reward: { 'fur': 15 }
+						cost: { 'carrot': 3 },
+						reward: { 'fur': 3 }
 					},
 					'sellCabbage': {
 						text: _('sell cabbage'),
-						cost: { 'cabbage': 2 },
-						reward: { 'fur': 10 }
+						cost: { 'cabbage': 3 },
+						reward: { 'fur': 4 }
 					},
 					'sellPotatoes': {
 						text: _('sell potatoes'),
 						cost: { 'potato': 3 },
-						reward: { 'fur': 12 }
+						reward: { 'fur': 5 }
 					},
 					'buyCarrotSeed': {
 						available: function() {
