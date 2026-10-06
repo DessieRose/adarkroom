@@ -56,6 +56,22 @@ var Room = {
 			},
 			audio: AudioLibrary.BUILD
 		},
+		'compost bucket': {
+			name: _('compost bucket'),
+			button: null,
+			requires: { farm: 2 },
+			maximum: 1,
+			availableMsg: _('builder says the scraps could feed the soil, given a place to rot.'),
+			buildMsg: _('a compost bucket is set out by the fields. scraps go in, and slowly turn to earth.'),
+			maxMsg: _("one bucket is all the scraps can fill."),
+			type: 'building',
+			cost: function () {
+				return {
+					'wood': 50
+				};
+			},
+			audio: AudioLibrary.BUILD
+		},
 		'hut': {
 			name: _('hut'),
 			button: null,
@@ -1101,6 +1117,11 @@ var Room = {
 		if ($SM.get('game.builder.level') < 4) return false;
 		var craftable = Room.Craftables[thing];
 		if (Room.needsWorkshop(craftable.type) && $SM.get('game.buildings["' + 'workshop' + '"]', true) === 0) return false;
+		if (craftable.requires) {
+			for (var b in craftable.requires) {
+				if ($SM.get('game.buildings["' + b + '"]', true) < craftable.requires[b]) return false;
+			}
+		}
 		// farms stay hidden until the player has found at least one seed
 		if (thing == 'farm' && !Room.hasAnySeed()) return false;
 		var cost = craftable.cost();
