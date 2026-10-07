@@ -778,7 +778,7 @@ Events.Room = [
 					},
 					'ignore': {
 						text: _('let it be'),
-						nextScene: 'ignore'
+						nextScene: { 1: 'ignore' }
 					}
 				}
 			},
