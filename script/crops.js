@@ -16,7 +16,7 @@ const CROPS = {
       notification: _("something green, in all the grey."),
       growTime: 30, // seconds from planting to ready
       yield: 3, // veggies per harvest
-      heal: 4, // hp restored when eaten (cured meat is 8)
+      heal: 3, // hp restored when eaten (cured meat is 8)
       weight: 0.5, // bag space on the path (cured meat is 1)
       drop: {
         terrain: "FOREST", // key of World.TILE: 'FOREST', 'FIELD' or 'BARRENS'
@@ -41,8 +41,8 @@ const CROPS = {
       notification: _("someone tended this ground, once."),
       growTime: 45,
       yield: 2,
-      heal: 6,
-      weight: 1,
+      heal: 4,
+      weight: 0.5,
       drop: {
         terrain: "FOREST",
         minDistance: 8,
@@ -66,8 +66,8 @@ const CROPS = {
       notification: _("the ground gives way to a hollow."),
       growTime: 70,
       yield: 2,
-      heal: 8,
-      weight: 1,
+      heal: 5,
+      weight: 0.5,
       drop: {
         terrain: "FIELD",
         minDistance: 18,
@@ -91,8 +91,8 @@ const CROPS = {
       notification: _("a flash of red in the dust."),
       growTime: 95,
       yield: 2,
-      heal: 10,
-      weight: 1,
+      heal: 6,
+      weight: 0.5,
       drop: {
         terrain: "BARRENS",
         minDistance: 22,
@@ -117,8 +117,8 @@ const CROPS = {
 
       growTime: 120,
       yield: 1,
-      heal: 12,
-      weight: 1,
+      heal: 8,
+      weight: 0.5,
       drop: {
         terrain: "FOREST",
         minDistance: 28,
