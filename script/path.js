@@ -70,6 +70,15 @@ var Path = {
 		return 1;
 	},
 	
+	// one carry entry per veggie in CROPS.List; weight is read by getWeight
+	cropCarryables: function() {
+		var carryable = {};
+		for(var k in CROPS.List) {
+			carryable[k] = { type: 'tool', desc: _('restores') + ' ' + CROPS.List[k].heal + ' ' + _('hp') };
+		}
+		return carryable;
+	},
+
 	getCapacity: function() {
 		if($SM.get('stores["cargo drone"]', true) > 0) {
 			return Path.DEFAULT_BAG_SPACE + 100;
@@ -178,7 +187,7 @@ var Path = {
 			'charm': {type: 'tool'},
 			'alien alloy': { type: 'tool' },
 			'medicine': {type: 'tool', desc: _('restores') + ' ' + World.MEDS_HEAL + ' ' + _('hp') }
-		}, Room.Craftables, Fabricator.Craftables);
+		}, Path.cropCarryables(), Room.Craftables, Fabricator.Craftables);
 		
 		for(var k in carryable) {
 			var lk = _(k);
